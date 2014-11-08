@@ -14,11 +14,7 @@ class CanvasView: UIView {
         (100,150),(150,150),
         (150,200)]
     
-    var paths: [Path] = [] {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
+    var paths: [Path] = []
     
     var currentColor: UIColor = UIColor.blackColor() {
         didSet {
@@ -51,6 +47,11 @@ class CanvasView: UIView {
             // Request the system to draw.
             CGContextStrokePath(context)
         }
+    }
+    
+    func clear(){
+        self.paths = []
+        setNeedsDisplay()
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

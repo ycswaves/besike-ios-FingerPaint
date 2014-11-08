@@ -90,7 +90,7 @@ class ViewController: UIViewController {
     }
     
     func clearCanvas(button: UIButton){
-        canvasView.paths = []
+        canvasView.clear()
     }
 
 }
